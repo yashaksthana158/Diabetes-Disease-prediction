@@ -131,7 +131,7 @@ def render_footer():
         "**Disclaimer:** This tool is for educational purposes only and is not a substitute "
         "for professional medical advice, diagnosis, or treatment. Model accuracy: ~82% on test data."
     )
-    st.caption("Model: Random Forest | Dataset: Pima Indians Diabetes | Semester 8 Academic Project")
+    st.caption("Model: Random Forest | Dataset: Pima Indians Diabetes | By Yash")
 
 
 def main():
