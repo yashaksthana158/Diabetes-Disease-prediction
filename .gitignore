@@ -27,9 +27,6 @@ ENV/
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# Data files (download separately from Kaggle)
-data/diabetes.csv
-
 # Trained models (regenerate with train_model.py)
 models/*.pkl
 models/*.joblib
