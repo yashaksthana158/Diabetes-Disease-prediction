@@ -133,9 +133,17 @@ df[ZERO_AS_NULL] = df[ZERO_AS_NULL].fillna(df[ZERO_AS_NULL].median())
 
 ## 🤖 Models & Results
 
-Three models were trained and evaluated on identical train/test splits with a fixed random seed (`42`) for full reproducibility.
+All three models were tuned with **GridSearchCV** (5-fold stratified CV, scoring=F1) before evaluation on the held-out test set. Random seed `42` used throughout for reproducibility.
 
-### Evaluation Metrics
+### Hyperparameter Search Spaces
+
+| Model | Parameters Tuned |
+|---|---|
+| Logistic Regression | `C` ∈ {0.01, 0.1, 1, 10, 100} |
+| Random Forest | `n_estimators` ∈ {100,200,300} · `max_depth` ∈ {4,6,8,None} · `min_samples_split` ∈ {2,5,10} |
+| XGBoost | `n_estimators` ∈ {100,200} · `max_depth` ∈ {3,5,7} · `learning_rate` ∈ {0.05,0.1,0.2} |
+
+### Evaluation Metrics (Tuned Models)
 
 | Model | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
 |---|---|---|---|---|---|
